@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-addresses-table
+      author: your-name
+      changes:
+        - createTable:
+            tableName: addresses
+            remarks: Таблица адресов отелей
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  remarks: Уникальный идентификатор адреса
+              - column:
+                  name: house_number
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+                  remarks: Номер дома
+              - column:
+                  name: street
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                  remarks: Название улицы
+              - column:
+                  name: city
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+                  remarks: Город
+              - column:
+                  name: country
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+                  remarks: Страна
+              - column:
+                  name: post_code
+                  type: VARCHAR(20)
+                  remarks: Почтовый индекс
+
+        - createSequence:
+            sequenceName: addresses_seq
+            startValue: 1
+            incrementBy: 1
