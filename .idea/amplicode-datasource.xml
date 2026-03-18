@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AmplicodeJpaDataSourceConfig">
+    <data-sources>
+      <data-source id="6e2c0844-2ca6-4dd4-afc2-cdc2bd341613" name="hoteldb" url="jdbc:h2:mem:hoteldb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL" driverClass="org.h2.Driver" />
+    </data-sources>
+    <option name="preferredDataSourceId" value="6e2c0844-2ca6-4dd4-afc2-cdc2bd341613" />
+  </component>
+</project>

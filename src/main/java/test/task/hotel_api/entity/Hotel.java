@@ -19,8 +19,7 @@ import java.util.Set;
 public class Hotel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hotels_seq")
-    @SequenceGenerator(name = "hotels_seq", sequenceName = "hotels_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
@@ -33,15 +32,15 @@ public class Hotel {
     @Column(name = "brand", length = 100)
     private String brand;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "address_id", referencedColumnName = "id", nullable = false)
     private Address address;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "contacts_id", referencedColumnName = "id", nullable = false)
     private Contacts contacts;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "arrival_time_id", referencedColumnName = "id", nullable = false)
     private ArrivalTime arrivalTime;
 

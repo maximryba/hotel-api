@@ -20,8 +20,7 @@ import java.util.Set;
 public class Amenity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "amenities_seq")
-    @SequenceGenerator(name = "amenities_seq", sequenceName = "amenities_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank

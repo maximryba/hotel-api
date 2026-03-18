@@ -18,8 +18,7 @@ import java.time.LocalTime;
 public class ArrivalTime {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "arrival_times_seq")
-    @SequenceGenerator(name = "arrival_times_seq", sequenceName = "arrival_times_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
